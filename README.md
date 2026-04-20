@@ -65,7 +65,7 @@ Example with [promesa](https://github.com/funcool/promesa):
 
 ## Syntax
 
-The document syntax is based on hiccup where each element is represented by a vector of the form:
+The document syntax is based on hiccup. Each element is represented by a vector of the form:
 
 ```
 ;; tag    attrs              & children
@@ -89,16 +89,16 @@ The document syntax is based on hiccup where each element is represented by a ve
 [:mj-text "hello" (when x "there")]
 ```
 
-## Configuration
-
-See MJML [Inside Node.js](https://documentation.mjml.io/#inside-node-js) for all available options.
-
-The `options` argument should be a ClojureScript map with keyword keys.
-
 ## Tags
 
 See MJML [Getting Started](https://documentation.mjml.io/#getting-started) to learn about designing MJML emails followed
 by documentation of all tags (components).
+
+## Options
+
+See MJML [Inside Node.js](https://documentation.mjml.io/#inside-node-js) for all available options.
+
+The `options` argument should be a ClojureScript map with keyword keys.
 
 ## Tips
 

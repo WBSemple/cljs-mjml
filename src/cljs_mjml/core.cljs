@@ -15,7 +15,8 @@
 
 (defn ->xml
   [x]
-  (if (sequential? x)
+  (cond
+    (sequential? x)
     (if (keyword? (first x))
       (let [tag (name (first x))
             [attrs & children] (cond-> (rest x) (not (map? (second x))) (conj nil))]
@@ -23,9 +24,22 @@
              (str/join (map ->xml children))
              "</" tag ">\n"))
       (str/join (map ->xml x)))
+
+    (nil? x)
+    ""
+
+    :else
     (str (escape-html x) "\n")))
 
 (defn render+
-  [options hiccup]
-  (-> (mjml2html (->xml hiccup) (clj->js options))
+  "Render a raw HTML string from a document of hiccup-style MJML
+
+   options
+   https://github.com/WBSemple/cljs-mjml#options
+
+   document
+   https://github.com/WBSemple/cljs-mjml#syntax
+  "
+  [options document]
+  (-> (mjml2html (->xml document) (clj->js options))
       (.then #(js->clj % :keywordize-keys true))))
