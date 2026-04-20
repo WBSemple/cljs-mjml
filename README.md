@@ -6,11 +6,10 @@ in [ClojureScript](https://clojurescript.org/) (or [Node Babashka](https://githu
 ## Justification
 
 MJML is a markup language which takes much of the suffering out of designing responsive HTML emails that work across
-most popular email clients. MJML allows us to decide how to populate templates with data and, while conventional
-templating languages suffice, we can do better. If Hiccup is the best tool to dynamically form HTML (I believe it is),
-then
-it stands to reason that the same syntax would serve us equally well for MJML. The resulting combination is, in my
-opinion, the second-best way of generating emails!
+popular email clients. MJML leaves it to us to decide how to populate templates with data and, while conventional
+templating languages are sufficient in simple cases, we can do better. If Hiccup is the best tool to dynamically
+generate HTML (I believe it is), then it stands to reason that the same syntax would serve us equally well for MJML. The
+resulting combination is, in my opinion, the second-best way of generating emails!
 
 **Why only second-best?** You could just send plain text...
 
@@ -52,7 +51,8 @@ ClojureScript data is rendered to HTML with `(render+ options document)`
 This returns a promise resolving to a map of `:html` (the resulting HTML string containing your whole email) and
 `:errors` (a vector of error messages).
 
-Example with [promesa](https://github.com/funcool/promesa):
+There are a number of ways of dealing with promises, and you should choose whichever solution fits the rest of your
+project. Example with [promesa](https://github.com/funcool/promesa):
 
 ```
 (require '[promesa.core :as p])
@@ -91,8 +91,8 @@ The document syntax is based on hiccup. Each element is represented by a vector 
 
 ## Tags
 
-See MJML [Getting Started](https://documentation.mjml.io/#getting-started) to learn about designing MJML emails followed
-by documentation of all tags (components).
+See MJML [Getting Started](https://documentation.mjml.io/#getting-started) to learn about designing MJML emails and find
+documentation of all tags (called components).
 
 ## Options
 
@@ -104,8 +104,8 @@ The `options` argument should be a ClojureScript map with keyword keys.
 
 ### Live Preview
 
-Consider setting up a reloading browser preview while creating/modifying designs. See the [example](example) project for
-an existing approach.
+Consider setting up a reloading browser preview while implementing designs. See the [example](example) project for an
+existing approach.
 
 ### Convert Examples
 
