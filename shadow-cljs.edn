@@ -2,4 +2,4 @@
 
  :builds {:lib {:target :node-library
                 :output-to "target/cljs-mjml.js"
-                :exports-var cls-mjml.core/render}}}
+                :exports-var cljs-mjml.core/render+}}}
