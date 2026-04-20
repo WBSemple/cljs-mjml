@@ -1,6 +1,6 @@
 (ns cljs-mjml.core
   (:require [clojure.string :as str]
-            ["mjml" :as mjml2html]))
+            ["mjml$default" :as mjml2html]))
 
 (defn escape-html
   [s]

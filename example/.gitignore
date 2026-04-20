@@ -1,0 +1,8 @@
+/.cpcache
+/.idea
+/.shadow-cljs
+/node_modules
+/target
+/.nbb
+*.iml
+.DS_Store
