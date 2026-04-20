@@ -3,7 +3,6 @@
     "mjml": "^5.0.1"
   },
   "devDependencies": {
-    "nbb": "^1.4.207",
     "shadow-cljs": "^3.4.4"
   }
 }

@@ -1,5 +1,1 @@
-{:source-paths ["src"]
-
- :builds {:lib {:target :node-library
-                :output-to "target/cljs-mjml.js"
-                :exports-var cljs-mjml.core/render+}}}
+{:source-paths ["src"]}
