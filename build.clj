@@ -17,10 +17,10 @@
    :connection "scm:git:https://github.com/WBSemple/cljs-mjml.git"
    :developerConnection "scm:git:ssh://git@github.com/WBSemple/cljs-mjml.git"})
 
-(defn build [_]
+(defn build
+  [{:keys [version]}]
   (b/delete {:path target})
-  (let [version "0.1.0-SNAPSHOT"
-        basis (dissoc (b/create-basis) :libs) ;; remove unwanted clojure dependency
+  (let [basis (dissoc (b/create-basis) :libs) ;; remove unwanted clojure dependency
         jar-file (format "%s/cljs-mjml-%s.jar" target version)]
     (b/write-pom {:basis basis
                   :pom-data pom-template
@@ -34,7 +34,8 @@
             :jar-file jar-file})
     jar-file))
 
-(defn release [_]
+(defn release
+  [{:keys [version]}]
   (dd/deploy {:installer :remote
-              :artifact (build nil)
+              :artifact (build {:version version})
               :pom-file (b/pom-path {:lib lib :class-dir class-dir})}))
