@@ -1,6 +1,6 @@
 # Example: cljs-mjml in nbb
 
-This is an esxample of using cljs-mjml in Node Babashka with live browser preview :)
+This is an example of using cljs-mjml in Node Babashka with live browser preview 🦊
 
 ## Setup
 ```
