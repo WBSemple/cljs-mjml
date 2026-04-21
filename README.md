@@ -29,6 +29,17 @@ Install cljs-mjml
 
 [![Clojars Project](https://img.shields.io/clojars/v/io.github.wbsemple/cljs-mjml.svg)](https://clojars.org/io.github.wbsemple/cljs-mjml)
 
+### Node Babashka Lambda Bundle
+
+Dependencies specified in `nbb.edn` are managed by `bb` which may be unavailable in certain runtimes (such as a Node AWS Lambda). If you want to include cljs-mjml without `bb`, download the source files directly to your NBB project's classpath.
+
+```
+curl -L https://github.com/WBSemple/cljs-mjml/archive/refs/tags/0.1.1.tar.gz \
+  | tar -xzf - --strip-components=2 cljs-mjml-0.1.1/src
+```
+
+(make sure to also install mjml with npm)
+
 ## Usage
 
 ClojureScript data is rendered to HTML with `(render+ options document)`
@@ -63,7 +74,7 @@ project. Example with [promesa](https://github.com/funcool/promesa):
   )
 ```
 
-## Syntax
+### Syntax
 
 The document syntax is based on hiccup. Each element is represented by a vector of the form:
 
@@ -89,12 +100,12 @@ The document syntax is based on hiccup. Each element is represented by a vector 
 [:mj-text "hello" (when x "there")]
 ```
 
-## Tags
+### Tags
 
 See MJML [Getting Started](https://documentation.mjml.io/#getting-started) to learn about designing MJML emails and find
 documentation of all tags (called components).
 
-## Options
+### Options
 
 See MJML [Inside Node.js](https://documentation.mjml.io/#inside-node-js) for all available options.
 
