@@ -1,4 +1,4 @@
-# cljs-mjml <img src="icon.svg" alt="Icon" width="24" height="24" />
+# cljs-mjml <img src="icon.svg" alt="Icon" align="right" width="128"> 
 
 Write [MJML](https://mjml.io/) email templates with [Hiccup](https://github.com/weavejester/hiccup)-style syntax
 in [ClojureScript](https://clojurescript.org/) (or [Node Babashka](https://github.com/babashka/nbb))
